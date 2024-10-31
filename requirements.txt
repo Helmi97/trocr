@@ -1,0 +1,8 @@
+torch
+transformers
+pillow
+pandas
+editdistance
+scikit-learn
+datasets
+requests
