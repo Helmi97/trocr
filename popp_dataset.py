@@ -133,13 +133,5 @@ class POPP_Dataset:
     def get_datasets(self):
         """
         Get the HuggingFace DatasetDict containing train, valid, and test splits.
-        """import os
-import zipfile
-import json
-import pandas as pd
-from PIL import Image
-import io
-import requests
-import torch
-from datasets import Dataset, DatasetDict, Features, Value
+        """
         return self.dataset_dict
