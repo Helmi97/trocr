@@ -95,6 +95,8 @@ class TrOCR:
 
     def generate(self, pixel_values, prediction_parameters={}, **generate_kwargs):
         """Generates text from pixel values using the model"""
+        # Move pixel_values to the same device as the model
+        pixel_values = pixel_values.to(self.model.device)
         with torch.no_grad():
             generated_ids = self.model.generate(
                 pixel_values,
@@ -104,6 +106,7 @@ class TrOCR:
                 **generate_kwargs
             )
         return generated_ids
+
 
     def decode(self, generated_ids, prediction_parameters={}):
         """Decodes generated text IDs to strings"""
